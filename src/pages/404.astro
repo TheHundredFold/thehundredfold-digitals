@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Page not found — TheHundredFold Digitals">
+  <Header homeLinks />
+  <main id="main" class="case-page">
+    <p class="eyebrow">404 / A MISSING CONNECTION</p>
+    <h1>Let’s get you<br /><em>back on track.</em></h1>
+    <p>That page isn’t here. You can explore my work from the homepage.</p>
+    <a class="button" href="/">Back to the portfolio <span aria-hidden="true">↗</span></a>
+  </main>
+  <Footer homeLinks />
+</BaseLayout>

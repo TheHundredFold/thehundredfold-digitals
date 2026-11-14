@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Tools from "../components/Tools.astro";
+import FeaturedWork from "../components/FeaturedWork.astro";
+import Walkthrough from "../components/Walkthrough.astro";
+import Approach from "../components/Approach.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import CaseStudyDialog from "../components/CaseStudyDialog.astro";
+---
+<BaseLayout>
+<Header />
+<main id="main">
+<Hero />
+<Tools />
+<FeaturedWork />
+<Walkthrough />
+<Approach />
+<About />
+<Contact />
+</main>
+<Footer />
+<CaseStudyDialog />
+<script>import "../scripts/walkthrough";</script>
+</BaseLayout>

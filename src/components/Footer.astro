@@ -1,0 +1,6 @@
+---
+interface Props { homeLinks?: boolean; }
+const { homeLinks = false } = Astro.props;
+const sectionHref = (id: string) => `${homeLinks ? "/" : ""}#${id}`;
+---
+  <footer><a href={sectionHref("home")}>THEHUNDREDFOLD DIGITALS</a><span>Thoughtfully built by Isaac.</span><button id="motion-toggle" type="button" aria-pressed="false">Pause animations</button><a href={sectionHref("home")}>Back to top ↑</a></footer>

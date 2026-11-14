@@ -1,0 +1,9 @@
+---
+interface Props { homeLinks?: boolean; }
+const { homeLinks = false } = Astro.props;
+const sectionHref = (id: string) => `${homeLinks ? "/" : ""}#${id}`;
+---
+  <header class="site-header">
+    <a class="brand" href={sectionHref("home")} aria-label="TheHundredFold Digitals home"><img src="/assets/mark.png" alt="TheHundredFold Digitals symbol" width="1600" height="1600"></a>
+    <nav aria-label="Main navigation"><a href={sectionHref("work")}>Selected work <span>01</span></a><a href={sectionHref("approach")}>Approach</a><a href={sectionHref("about")}>About</a><a class="nav-contact" href={sectionHref("contact")}>Let’s talk <span aria-hidden="true">↗</span></a></nav>
+  </header>

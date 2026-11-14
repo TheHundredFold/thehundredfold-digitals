@@ -1,0 +1,26 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+interface Props { title?: string; description?: string; }
+const { title = `${site.name} — Isaac’s automation portfolio`, description = site.description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1F4D2B" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="icon" href="/assets/mark.png" type="image/png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+    <script>import '../scripts/motion';</script>
+  </body>
+</html>

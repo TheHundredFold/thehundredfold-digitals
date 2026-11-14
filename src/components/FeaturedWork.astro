@@ -1,0 +1,22 @@
+---
+import { featuredProject } from "../data/projects";
+---
+    <section class="section selected-work" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><p class="eyebrow">01 / SELECTED WORK</p><p>Real workflows.<br>Considered from end to end.</p></div>
+      <div class="project-heading"><h2 id="work-title">A spreadsheet in.<br><em>A connected system out.</em></h2><span class="project-index" aria-hidden="true">01</span></div>
+      <div class="project-layout">
+        <div class="system-preview">
+          <div class="preview-heading"><span><span class="status-dot"></span> CARE OUTREACH AUTOMATION</span><span>WORKFLOW OVERVIEW</span></div>
+          <div class="workflow-art" aria-label="Researched lead file connects to checks, outreach, replies and proposals">
+            <div class="flow-node flow-input"><span class="node-icon">↥</span><span>Researched<br>lead file</span><small>EXCEL INTAKE</small></div>
+            <div class="flow-connector" aria-hidden="true"><span></span>→</div>
+            <div class="flow-node flow-core"><span class="node-icon">✳</span><span>Check. Connect.<br>Coordinate.</span><small>N8N ORCHESTRATION</small></div>
+            <div class="flow-connector" aria-hidden="true"><span></span>→</div>
+            <div class="flow-outputs"><div>↗ <span>Personalised outreach</span></div><div>↩ <span>Reply & follow-up tracking</span></div><div>▤ <span>Requested proposals</span></div></div>
+          </div>
+          <div class="preview-footer"><span>ONE PLATFORM. CONNECTED PARTS.</span><a href="#demo">Explore the interactive example <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="project-description"><p class="eyebrow">FEATURED CASE STUDY / ISAAC’S CONSULTANCY</p><h3>{featuredProject.title}</h3><p>{featuredProject.summary}</p><div class="tags">{featuredProject.tools.map(tool => <span>{tool}</span>)}</div><button class="text-link case-open" type="button">Inside the build <span aria-hidden="true">↗</span></button><a class="case-page-link" href={`/projects/${featuredProject.slug}/`}>Read the full case study ↗</a></div>
+      </div>
+      <div class="project-details"><div><span>THE CHALLENGE</span><p>Keep lead research, six inboxes and campaign history connected without repeating the same manual steps.</p></div><div><span>THE BUILD</span><p>A hosted n8n system with shared records, sending windows, reply checks and company-level duplicate controls.</p></div><div><span>THE IMPORTANT DETAIL</span><p>Interested replies and opt-outs stop cold follow-ups. Contact history stays with the company across campaigns.</p></div></div>
+    </section>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CaseStudyContent from '../../components/CaseStudyContent.astro';
+import { projects } from '../../data/projects';
+export function getStaticPaths() {
+  return projects.map(project => ({ params: { slug: project.slug }, props: { project } }));
+}
+const { project } = Astro.props;
+---
+<BaseLayout title={`${project.title} — TheHundredFold Digitals`} description={project.summary}>
+  <Header homeLinks />
+  <main id="main" class="case-page">
+    <a class="case-back" href="/#work">← Back to selected work</a>
+    <CaseStudyContent />
+  </main>
+  <Footer homeLinks />
+</BaseLayout>

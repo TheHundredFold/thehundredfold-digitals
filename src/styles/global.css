@@ -1622,3 +1622,24 @@ body.modal-open {
 }
 
 .case-page h2 { font: 30px var(--serif); margin: 35px 0 15px; letter-spacing: -.4px; }
+
+/* Recorded workflow tours */
+.recordings { margin-top:76px; padding-top:40px; border-top:1px solid var(--line); }
+.recordings-home { margin-top:0; background:#eee9da; }
+.recordings-intro { max-width:660px; margin-bottom:32px; }
+.recordings-intro h2,.case-page .recordings-intro h2 { font:clamp(36px,4.7vw,62px)/1.12 var(--serif); letter-spacing:-1.6px; margin:16px 0 22px; }
+.recordings-intro h2 em { color:var(--dark-gold); font-weight:400; }
+.recordings-intro > p:last-child { font-size:14px; max-width:540px; }
+.recording-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:25px; }
+.recording-card { min-width:0; border:1px solid var(--line); background:var(--cream); border-radius:18px; overflow:hidden; box-shadow:0 14px 36px #1f4d2b08; }
+.recording-topline { background:var(--green); color:var(--cream); padding:15px 20px; display:flex; justify-content:space-between; gap:12px; font-size:9px; letter-spacing:1.2px; }
+.recording-topline span:last-child { color:#ead58c; }
+.recording-card video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#143620; }
+.recording-copy { padding:25px; }
+.recording-copy h3,.case-page .recording-copy h3 { font:26px/1.2 var(--serif); margin:0 0 14px; letter-spacing:-.5px; }
+.recording-copy p,.case-page .recording-copy p { font-size:13px; line-height:1.8; margin:0; }
+.recording-copy ul { margin:22px 0 0; padding:18px 0 0; border-top:1px solid var(--line); list-style:none; }
+.recording-copy li,.case-page .recording-copy li { display:flex; gap:12px; font-size:11px; margin:8px 0; }
+.recording-copy li span { color:var(--dark-gold); font-size:10px; }
+.recordings-note,.case-page .recordings-note { color:var(--dark-gold); font-size:11px; max-width:740px; margin:24px 0; }
+@media(max-width:700px) { .recording-grid { grid-template-columns:1fr; } .recording-copy { padding:22px; } .recordings-intro h2 { letter-spacing:-1px; } }

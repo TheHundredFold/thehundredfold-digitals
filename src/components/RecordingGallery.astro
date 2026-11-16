@@ -1,0 +1,39 @@
+---
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+const recordings = [
+  { slug: 'upload-to-outreach', number: '01', title: 'From upload to outreach', duration: '0:34', description: 'A closer look at the researched-file intake and the checks connecting an outreach job to its sending records.', chapters: ['Researched file intake', 'Sending checks & records'] },
+  { slug: 'replies-to-proposals', number: '02', title: 'From replies to proposals', duration: '0:33', description: 'Follow the reply-classification and requested-proposal branches, including the branded PDF preparation steps.', chapters: ['Reply classification', 'Requested PDF proposals'] },
+];
+---
+<section class:list={['recordings', { 'section': compact, 'recordings-home': compact }]} id="recordings" aria-labelledby="recordings-title">
+  <div class="recordings-intro">
+    <p class="eyebrow">RECORDED WALKTHROUGHS / THE REAL BUILD</p>
+    <h2 id="recordings-title">Inside the connections.<br><em>See the work.</em></h2>
+    <p>Two short tours of the n8n workflow canvas. Edited from the original recordings to focus on the connections that matter.</p>
+  </div>
+  <div class="recording-grid">
+    {recordings.map(recording => (
+      <article class="recording-card">
+        <div class="recording-topline"><span>FILM {recording.number}</span><span>{recording.duration} · SILENT TOUR</span></div>
+        <video controls playsinline preload="none" poster={`/videos/${recording.slug}.jpg`} aria-label={recording.title} aria-describedby={`recording-${recording.number}`} width="1600" height="900">
+          <source src={`/videos/${recording.slug}.mp4`} type="video/mp4" />
+          <p>Your browser cannot play this video. <a href={`/videos/${recording.slug}.mp4`}>Open the recording</a>.</p>
+        </video>
+        <div class="recording-copy">
+          <h3>{recording.title}</h3>
+          <p id={`recording-${recording.number}`}>{recording.description}</p>
+          <ul aria-label="In this recording">{recording.chapters.map((chapter, i) => <li><span>0{i + 1}</span>{chapter}</li>)}</ul>
+        </div>
+      </article>
+    ))}
+  </div>
+  <p class="recordings-note">Workflow canvas tours, rather than live execution results. Playback starts only when you choose it; use full screen for a closer look at the nodes.</p>
+  {compact && <a class="text-link" href="/projects/care-outreach-automation/#recordings">Explore the full case study <span aria-hidden="true">↗</span></a>}
+</section>
+<script>
+  const players = document.querySelectorAll<HTMLVideoElement>('.recordings video');
+  players.forEach(player => player.addEventListener('play', () => {
+    players.forEach(other => { if (other !== player) other.pause(); });
+  }));
+</script>
